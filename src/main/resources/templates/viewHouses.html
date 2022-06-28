@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>View Houses</title>
+		<style>
+			table, tr, th, td {border: 1px solid black; }
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>Id</th>
+				<th>Address</th>
+				<th>Area</th>
+				<th>Type</th>
+				<th>Approved</th>
+				<th></th>
+				<th></th>
+			</tr>
+			
+			<tr th:each="house: ${houses}">
+				<td th:text="${house.id}"></td>
+				<td th:text="${house.address}"></td>
+				<td th:text="${house.area}"></td>
+				<td th:text="${house.type}"></td>
+				<td th:text="${house.approved}"></td>
+				<td><a th:href="@{/approve(id=${house.id})}">Approve</a></td>
+				<td><a th:href="@{/delete(id=${house.id})}">Delete</a></td>
+			</tr>
+		
+		</table>
+	
+	</body>
+</html>

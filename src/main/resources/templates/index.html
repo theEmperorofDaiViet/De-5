@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Home</title>
+		<style>
+			table, tr, th, td {border: 1px solid black; }
+		</style>
+	</head>
+	<body>
+		<br/>
+		<form th:action="@{/viewHouses}" method="post">
+			<input type="submit" value="View Houses"/>
+		</form>
+	</body>
+</html>

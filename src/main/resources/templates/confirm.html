@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Confirm</title>
+	</head>
+	<body>
+		<h1>Are You Sure Want To Delete This House?</h1>
+		<br/>
+		<table>
+			<tr>
+				<th>Id:	</th>
+				<td th:text="${house.id}"></td>
+			</tr>
+			<tr>
+				<th>Address:	</th>
+				<td th:text="${house.address}"></td>
+			</tr>
+			<tr>
+				<th>Area:	</th>
+				<td th:text="${house.area}"></td>
+			</tr>
+			<tr>
+				<th>Type:	</th>
+				<td th:text="${house.type}"></td>
+			</tr>
+			<tr>
+				<th>Approved:	</th>
+				<td th:text="${house.approved}"></td>
+			</tr>			
+		</table>
+		<form th:action="@{/delete}" method="post">
+			<input type="submit" value="Confirm Delete"/>
+			<input type="hidden" th:name="action" th:value="Yes"/>
+			<input type="hidden" th:name="id" th:value="${house.id}"/>
+		</form>
+		
+		<form th:action="@{/delete}" method="post">
+			<input type="submit" value="Cancel"/>
+			<input type="hidden" th:name="action" th:value="No"/>
+			<input type="hidden" th:name="id" th:value="${house.id}"/>
+		</form>
+	
+	</body>
+</html>
